@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Accueil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-input [(ngModel)]="code" type="text" placeholder="Mettez un code"></ion-input>
+      <button ion-button block color=danger (click)="create(code);">CREER QR CODE</button>
+
+      <img *ngIf="affichageQR()" [src]="generated"/>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-fab bottom right *ngIf="affichageQR()">
+      <button ion-fab large color=danger class="ion-icon" (click)="share(generated)"><ion-icon name="share"></ion-icon></button>
+      
+    </ion-fab>
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Historique</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of items">
+      {{item.text}}
+      <div class="item-note" item-end>
+          {{item.createdAt | date: ' hh:mm dd/MM/yyyy'}}
+        </div>
+    </button>
+  </ion-list>
+</ion-content>
